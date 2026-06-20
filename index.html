@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hailey Chengyu Huang</title>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@ artist of life, creator, passionate learner
 
 <div class="card">
 <p>
-A college sophomore intending to major in Art and
+I'm a college sophomore intending to major in Art and
 Psychology/Philosophy, with a museum concentration.
 </p>
 
@@ -66,7 +66,7 @@ observe, and understand.
 
 <div class="card project">
 <h3>Art Gallery of the Family</h3>
-<p>An evolving archive collecting works made by family members.</p>
+<p>An evolving hallway archive collecting works made by family members.</p>
 </div>
 
 <div class="card project">
@@ -114,27 +114,41 @@ experimentation, and learning through drawing.
 <section class="easter">
 <p>Curious?</p>
 <p>如果你想看看更具个人色彩的我</p>
-
-<button onclick="enterSecretMode()">
-Enter
-</button>
+<button onclick="enterSecretMode()">Enter</button>
 </section>
 
-<footer>
-Made with curiosity and continual becoming.
-© 2026 Hailey Chengyu Huang
-</footer>
-
-<script>
-function enterSecretMode(){
-  document.body.classList.toggle("secret-mode");
-
-  const isSecret = document.body.classList.contains("secret-mode");
-  document.title = isSecret
-    ? "You found her!"
-    : "Hailey Chengyu Huang";
-}
-</script>
-
+<section id="secret" class="hidden">
+  <h2 class="secret-header">Inside Hailey’s Brain</h2>
+  <div class="card">
+  <p>Favorite books, current obsessions, travel memories, things I'm learning, and random thoughts.</p>
+  </div>
+  
+  <div class="grid secret-gallery">
+  <div class="card"><img src="images/books.jpg"><h3>Favorite Books</h3></div>
+  <div class="card"><img src="images/obsessions.jpg"><h3>Current Obsessions</h3></div>
+  <div class="card"><img src="images/travel-1.jpg"><h3>Travel Memories</h3></div>
+  <div class="card"><img src="images/travel-2.jpg"><h3>More Travels</h3></div>
+  <div class="card"><img src="images/cooking.jpg"><h3>Cooking Notebook</h3></div>
+  <div class="card"><img src="images/secret-photo.jpg"><h3>Little Discoveries</h3></div>
+  </div>
+  </section>
+  
+  <footer>
+  Made with curiosity and continual becoming.<br>
+  © 2026 Hailey Chengyu Huang
+  </footer>
+  
+  <script>
+  function setLang(lang){
+   document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+     el.textContent = el.getAttribute('data-'+lang);
+   });
+  }
+  function enterSecretMode(){
+   document.body.classList.add('secret-mode');
+   document.getElementById('secret').classList.remove('hidden');
+   document.getElementById('secret').scrollIntoView({behavior:'smooth'});
+  }
+  </script>
 </body>
 </html>
