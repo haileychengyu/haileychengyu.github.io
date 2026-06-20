@@ -6,8 +6,13 @@ html{
     --bg:#faf8f4;
     --card:#ffffff;
     --text:#272626;
-    --accent:#8a6a4f;
+    --accent1:#8a6a4f;
     --line:#e7dfd5;
+
+    --secret-bg:#120f18;
+    --secret-accent1:#a88cff;
+    --secret-accent2:#ffb8f6;
+
 }
 
 body{
@@ -58,7 +63,7 @@ nav a{
 }
 
 nav a:hover{
-    color:var(--accent);
+    color:var(--accent1);
 }
 
 .hero{
@@ -80,7 +85,7 @@ nav a:hover{
 .tagline{
     font-style:italic;
     font-size:1.3rem;
-    color:var(--accent);
+    color:var(--accent1);
 }
 
 .section{
@@ -111,7 +116,7 @@ nav a:hover{
 
 .contact-links a{
     display:block;
-    color:var(--accent);
+    color:var(--accent1);
     text-decoration:none;
     margin:.5rem 0;
 }
@@ -126,13 +131,13 @@ nav a:hover{
     padding:14px 28px;
     font-size:1rem;
     background:none;
-    border:1px solid var(--accent);
+    border:1px solid var(--accent1);
     cursor:pointer;
     transition:.4s;
 }
 
 .easter button:hover{
-    background:var(--accent);
+    background:var(--accent1);
     color:white;
 }
 
