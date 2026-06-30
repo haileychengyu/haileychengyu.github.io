@@ -1,154 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hailey Chengyu Huang</title>
-
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An autobiographical archive disguised as a navigable landscape for Hailey Chengyu Huang." />
+  <title>Hailey Chengyu Huang — Autobiographical Archive</title>
+  <link rel="stylesheet" href="css/typography.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/world.css" />
+  <link rel="stylesheet" href="css/rooms.css" />
+  <link rel="stylesheet" href="css/animation.css" />
 </head>
-
 <body>
+  <canvas id="graphite-cursor" aria-hidden="true"></canvas>
+  <div class="archive-atmosphere" aria-hidden="true"></div>
+  <div id="transition-veil" class="transition-veil" aria-hidden="true"></div>
 
-<div class="stars"></div>
+  <main id="archive" class="archive-shell" data-current-room="threshold">
+    <section id="threshold" class="scene scene-threshold is-active" aria-labelledby="threshold-title">
+      <div class="fog-field">
+        <figure class="threshold-photograph">
+          <img src="assets/photos/threshold-horse-in-fog.jpg" alt="A placeholder photograph of a horse dissolving into fog." />
+          <figcaption>A photograph taken before the intention to archive was formed.</figcaption>
+        </figure>
+        <div class="threshold-copy manuscript-fragment">
+          <p class="archive-kicker">Entry condition / unnumbered</p>
+          <h1 id="threshold-title">The archive begins where recognition fails.</h1>
+          <p>There is a person here, but not yet as biography. Enter by following the evidence: rooms, papers, photographs, lights left on.</p>
+          <button class="artifact-action" data-enter-archive>ENTER THE FOGGED DOCUMENT</button>
+        </div>
+      </div>
+    </section>
 
-<nav>
-<div class="nav-container">
-<div class="logo">Hailey Chengyu Huang</div>
+    <section id="archive-map" class="scene scene-map" aria-labelledby="map-title">
+      <div class="folded-map document-surface">
+        <header class="map-header">
+          <div>
+            <p class="archive-kicker">Folded document / graphite index</p>
+            <h2 id="map-title">Archive Map</h2>
+          </div>
+          <p id="progress-readout" class="progress-stamp">0 / 5 rooms discovered</p>
+        </header>
+        <p class="map-note">The map is not a menu. It is the record of where the visitor has pressed their attention into the paper.</p>
+        <div id="map-regions" class="map-regions" aria-label="Archival room regions"></div>
+      </div>
+    </section>
 
-<ul>
-<li><a href="#about">About Me</a></li>
-<li><a href="#cv">CV</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#interests">Interests</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-</nav>
+    <section id="room-stage" class="scene scene-room" aria-live="polite"></section>
+  </main>
 
-<section class="hero">
-<h1>Hailey Chengyu Huang</h1>
-<p class="tagline">
-artist of life, creator, passionate learner
-</p>
-</section>
-
-<section id="about" class="section">
-<h2>About Me</h2>
-
-<div class="card">
-<p>
-I'm a college sophomore intending to major in Art and
-Psychology/Philosophy, with a museum concentration.
-</p>
-
-<p>
-I am fascinated by the intersection of artistic practice,
-human experience, and intellectual curiosity.
-Whether through visual art, cultural institutions,
-or interdisciplinary learning, I seek to create,
-observe, and understand.
-</p>
-</div>
-</section>
-
-<section id="cv" class="section">
-<h2>CV</h2>
-
-<div class="card">
-<p>A downloadable CV will live here.</p>
-<p>Education, exhibitions, research interests, leadership experiences, and future endeavors.</p>
-</div>
-</section>
-
-<section id="projects" class="section">
-<h2>Projects & Experiments</h2>
-
-<div class="card project">
-<h3>Art Gallery of the Family</h3>
-<p>An evolving hallway archive collecting works made by family members.</p>
-</div>
-
-<div class="card project">
-<h3>Drawing I: See My Progress</h3>
-<p>
-A visual timeline documenting growth from Feb 2025 to May 2025,
-experimentation, and learning through drawing.
-</p>
-</div>
-
-<div class="card project">
-<h3>Project C</h3>
-<p>coming ...</p>
-</div>
-</section>
-
-<section id="interests" class="section">
-<h2>My Other Interests</h2>
-
-<div class="card">
-<h3>Sports</h3>
-<p>Tennis · Trapeze · Racing · Skiing · Ice Hockey</p>
-
-<h3>Learning Languages</h3>
-<p>French · Russian</p>
-
-<h3>Cooking & Baking</h3>
-<p>Creating, experimenting, sharing.</p>
-
-<h3>Travel</h3>
-<p>Collecting stories and perspectives from places both familiar and new.</p>
-</div>
-</section>
-
-<section id="contact" class="section">
-<h2>Contact</h2>
-
-<div class="card contact-links">
-<a href="mailto:email@example.com">email@example.com</a>
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-</div>
-</section>
-
-<section class="easter">
-<p>Curious?</p>
-<p>如果你想看看更具个人色彩的我</p>
-<button onclick="enterSecretMode()">Enter</button>
-</section>
-
-<section id="secret" class="hidden">
-  <h2 class="secret-header">Inside Hailey’s Brain</h2>
-  <div class="card">
-  <p>Favorite books, current obsessions, travel memories, things I'm learning, and random thoughts.</p>
-  </div>
-  
-  <div class="grid secret-gallery">
-  <div class="card"><img src="images/books.jpg"><h3>Favorite Books</h3></div>
-  <div class="card"><img src="images/obsessions.jpg"><h3>Current Obsessions</h3></div>
-  <div class="card"><img src="images/travel-1.jpg"><h3>Travel Memories</h3></div>
-  <div class="card"><img src="images/travel-2.jpg"><h3>More Travels</h3></div>
-  <div class="card"><img src="images/cooking.jpg"><h3>Cooking Notebook</h3></div>
-  <div class="card"><img src="images/secret-photo.jpg"><h3>Little Discoveries</h3></div>
-  </div>
-  </section>
-  
-  <footer>
-  Made with curiosity and continual becoming.<br>
-  © 2026 Hailey Chengyu Huang
-  </footer>
-  
-  <script>
-  function setLang(lang){
-   document.querySelectorAll('[data-'+lang+']').forEach(el=>{
-     el.textContent = el.getAttribute('data-'+lang);
-   });
-  }
-  function enterSecretMode(){
-   document.body.classList.add('secret-mode');
-   document.getElementById('secret').classList.remove('hidden');
-   document.getElementById('secret').scrollIntoView({behavior:'smooth'});
-  }
-  </script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
